@@ -21,7 +21,7 @@ public class ConnectionFactory {
 
         Properties props = new Properties();
         try {
-            props.load(ConnectionFactory.class.getClassLoader().getResourceAsStream("db1.properties"));
+            props.load(ConnectionFactory.class.getClassLoader().getResourceAsStream("db.properties"));
 
             dataSource.setDriverClass(props.getProperty("db.driver"));
             dataSource.setJdbcUrl(props.getProperty("db.url"));
