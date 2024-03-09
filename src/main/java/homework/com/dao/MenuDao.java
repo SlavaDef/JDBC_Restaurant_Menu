@@ -12,5 +12,10 @@ public interface MenuDao {
 
     void createSomeDish();
 
-    List<Menu> getAll();
+    List<Menu> getAllBy(String sql);
+
+
+
+
+
 }

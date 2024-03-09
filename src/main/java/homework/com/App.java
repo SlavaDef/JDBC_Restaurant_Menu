@@ -5,9 +5,10 @@ import java.sql.SQLException;
 
 import homework.com.dao.MenuDao;
 import homework.com.dao.MenuDaoImp;
-import homework.com.entyti.Menu;
 import homework.com.storage.ConnectionFactory;
 
+
+import static homework.com.utils.Constants.*;
 import static homework.com.utils.Utils.printingEntity;
 
 public class App {
@@ -20,7 +21,9 @@ public class App {
 
             dao.createTable();
             dao.createSomeDish();
-            printingEntity(dao.getAll());
+            printingEntity(dao.getAllBy(SELECT_BY_PRICE_HIGHT));
+
+
 
 
         }

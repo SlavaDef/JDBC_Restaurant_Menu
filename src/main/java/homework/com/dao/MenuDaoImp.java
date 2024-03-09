@@ -39,7 +39,7 @@ public class MenuDaoImp implements MenuDao {
             try (PreparedStatement st = conn.prepareStatement(INIT_DISH_SQL)) {
                 st.setString(1, menu.getDish_name());
                 st.setDouble(2, menu.getDish_price() );
-                st.setDouble(3, menu.getDish_weight());
+                st.setFloat(3, menu.getDish_weight());
                 st.setInt(4, menu.getDiscount());
                 st.executeUpdate();
             }
@@ -51,28 +51,28 @@ public class MenuDaoImp implements MenuDao {
 
     @Override
     public void createSomeDish() {
-        addNewDish(new Menu("Big_Fish",12.5,0.3,5));
-        addNewDish(new Menu("Сutlet",22.8,0.6,2));
-        addNewDish(new Menu("Tea",1.5,0.7,1));
-        addNewDish(new Menu("Big-Mak",25.9,0.6,5));
-        addNewDish(new Menu("Cheik",10.2,0.7,1));
+        addNewDish(new Menu("Big-Mack",12.55,0.315f,5));
+        addNewDish(new Menu("Big-Tasty",22.88,0.625f,2));
+        addNewDish(new Menu("Tea",1.5,0.495f,1));
+        addNewDish(new Menu("Roial Chees",25.9,0.655f,5));
+        addNewDish(new Menu("Milk Sheik",10.2,0.755f,1));
     }
 
     @Override
-    public List<Menu> getAll() {
+    public List<Menu> getAllBy(String sql) {
 
         List<Menu> res = new ArrayList<>();
 
         try {
             try (Statement st = conn.createStatement()) {
-                try (ResultSet rs = st.executeQuery("SELECT * FROM " + table)) {
+                try (ResultSet rs = st.executeQuery(sql)) {
                     while (rs.next()) {
                         Menu menu = new Menu();
 
                         menu.setDish_id(rs.getLong(1));
                         menu.setDish_name(rs.getString(2));
                         menu.setDish_price(rs.getDouble(3));
-                        menu.setDish_weight(rs.getDouble(4));
+                        menu.setDish_weight(rs.getFloat(4));
                         menu.setDiscount(rs.getInt(5));
 
 
@@ -86,4 +86,6 @@ public class MenuDaoImp implements MenuDao {
             throw new RuntimeException(ex);
         }
     }
+
+
 }

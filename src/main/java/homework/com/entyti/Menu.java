@@ -15,11 +15,11 @@ public class Menu {
 
     private double dish_price;
 
-    private double dish_weight;
+    private float dish_weight;
 
     private int discount;
 
-    public Menu(String dish_name, double dish_price, double dish_weight, int discount) {
+    public Menu(String dish_name, double dish_price, float dish_weight, int discount) {
         this.dish_name = dish_name;
         this.dish_price = dish_price;
         this.dish_weight = dish_weight;
@@ -32,6 +32,6 @@ public class Menu {
                 "dish_name='" + dish_name + '\'' +
                 ", dish_price=" + dish_price+"$" +
                 ", dish_weight=" + dish_weight+"g" +
-                ", discount=" + discount ;
+                ", discount=" + discount+"%" ;
     }
 }
