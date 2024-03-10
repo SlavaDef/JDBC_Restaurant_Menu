@@ -19,5 +19,7 @@ public class Constants {
 
     public static final String SELECT_BY_ONLY_DISCOUNT = "SELECT * FROM menu WHERE discount > 0";
 
-    public static final String SELECT_BY_WEIGT_NOT_OWER_ONE_KG = "SELECT * FROM menu WHERE dish_weight+dish_weight<1";
+    public static final String SELECT_BY_WEIGT_NOT_OWER_ONE_KG = "SELECT * FROM menu WHERE dish_weight+dish_weight<1 ";
+
+    public static final String SELECT_BY_WEIGT_NOT_OWER_ONE_KG2 = "SELECT * FROM menu GROUP BY dish_weight HAVING COUNT (*) > 1; ";
 }
