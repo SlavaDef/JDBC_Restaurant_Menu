@@ -53,9 +53,9 @@ public class MenuDaoImp implements MenuDao {
     public void createSomeDish() {
         addNewDish(new Menu("Big-Mack",12.55,0.315f,5));
         addNewDish(new Menu("Big-Tasty",22.88,0.625f,2));
-        addNewDish(new Menu("Tea",1.5,0.495f,1));
+        addNewDish(new Menu("Tea",1.5,0.495f,0));
         addNewDish(new Menu("Roial Chees",25.9,0.655f,5));
-        addNewDish(new Menu("Milk Sheik",10.2,0.755f,1));
+        addNewDish(new Menu("Milk Sheik",10.2,0.755f,0));
     }
 
     @Override

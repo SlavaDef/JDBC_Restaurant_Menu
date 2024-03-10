@@ -29,9 +29,9 @@ public class Menu {
     @Override
     public String toString() {
         return "Restaurant Menu: " +
-                "dish_name='" + dish_name + '\'' +
-                ", dish_price=" + dish_price+"$" +
-                ", dish_weight=" + dish_weight+"g" +
-                ", discount=" + discount+"%" ;
+                "name = '" + dish_name + '\'' +
+                ", price = " + dish_price+"$" +
+                ", weight = " + dish_weight+"g" +
+                ", discount = " + discount+"%" ;
     }
 }

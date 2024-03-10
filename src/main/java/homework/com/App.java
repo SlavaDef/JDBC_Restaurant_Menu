@@ -21,7 +21,7 @@ public class App {
 
             dao.createTable();
             dao.createSomeDish();
-            printingEntity(dao.getAllBy(SELECT_BY_PRICE_HIGHT));
+            printingEntity(dao.getAllBy(SELECT_BY_WEIGT_NOT_OWER_ONE_KG));
 
 
 
